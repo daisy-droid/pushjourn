@@ -1,0 +1,137 @@
+<app-navbar></app-navbar>
+
+
+<div class="flex justify-center">
+  <h1 class="text-2xl ss">I'm most thankful for ...</h1>
+</div>
+<div class="grid md:grid-cols-2 sm:grid-cols-2 xs:grid-cols-1 lg:grid-cols-4 gap-5 justify-center">
+
+  <!-- <div class="card  bg-base-200 w-80 h-40 shadow-xl ss" *ngFor="let x of card; let num = index">
+
+The button to open modal
+    <label class="btn modal-button" for="my-modal" (click)="onSelect(x)">open modal</label>
+
+  -->
+  <input type="checkbox" id="my-modal" class="modal-toggle" />
+  <div class="modal">
+    <div class="modal-box">
+      <!-- <h3 class="font-bold text-lg">{{selected.title}}</h3>
+      <p class="py-4">{{selected.body}}</p> -->
+
+
+
+        <li>
+          <a routerLink="/today">
+            <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor"
+              class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z" />
+            </svg>back
+          </a>
+
+        </li>
+
+        <div class="flex justify-center">
+          <h1 class="text-2xl ss">Journal heeeree ...</h1>
+        </div>
+
+        <div class="width=50vw">
+
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text">Title</span>
+            </label>
+            <input type="text" placeholder="title" class="input input-bordered" [(ngModel)]="title" />
+          </div>
+
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text">New entry</span>
+            </label>
+            <textarea class="textarea textarea-bordered" placeholder="entry" [(ngModel)]="body">
+
+            </textarea>
+          </div>
+
+          <div class="flex">
+            <div class="modal-action">
+              <label for="my-modal" class="btn" (click)="edit()">Yes</label>
+            </div>
+
+            <div class="modal-action">
+              <label for="my-modal" class="btn">No</label>
+            </div>
+            </div>
+        </div>
+
+
+
+
+
+
+      
+      
+    </div>
+  </div>
+  <!--
+    <div class="card-body">
+      <div class="row flex justify-between">
+
+        <div class="col">
+          <h2 class="card-title">{{x.title}} </h2>
+        </div>
+        <div class="dropdown dropdown-left-hover col">
+          <label tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="25"
+              class="bi bi-three-dots justify-right">
+              <path
+                d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
+            </svg></label>
+          <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-40">
+            <li><a routerLink="/journal/{{x.entryid}}">update</a></li>
+            <label for="my-modal-5" class="btn modal-button" (click)="send(num)">delete</label>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+
+      <p>{{x.body}}</p>
+      <div class="card-actions justify-center">
+       <button class="btn btn-primary">Buy Now</button> 
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+<input type="checkbox" id="my-modal-5" class="modal-toggle m" />
+<div class="modal">
+  <div class="modal-box w-11/12 max-w-5xl">
+    <h3 class="font-bold text-lg">Delete</h3>
+    <p class="py-4">Are you sure you want to delete this card?</p>
+    <div class="modal-action">
+      <label for="my-modal-5" class="btn" (click)="delete()">Yes</label>
+      <label for="my-modal-5" class="btn">No</label>
+    </div>
+  </div> -->
+  <div class="card  bg-base-200 w-80 h-40 shadow-xl ss" *ngFor="let x of card; let num = index">
+    <label class="btn modal-button" for="my-modal" (click)="onSelect(num)">open modal</label>
+    <div class="card-body">
+      <div class="row flex justify-between">
+
+        <div class="flex flex-col">
+          <h2 class="card-title">{{x.title}} </h2>
+        </div>
+
+      </div>
+      <div class="flex flex-col">
+        <p class="py-4">{{x.body}}</p>
+      </div>
+    </div>
+  </div>
+</div>
