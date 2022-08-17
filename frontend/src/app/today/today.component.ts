@@ -79,9 +79,7 @@ export class TodayComponent implements OnInit {
     // this.selected = data;
   }
 
-  edit() {
-    this.submit();
-  }
+ 
 
   /*get(){
     //console.log(this.Form.value);
@@ -90,18 +88,14 @@ export class TodayComponent implements OnInit {
       console.log(respond)
     })*/
 
-  id: any;
-  //delete
-  send(num: any) {
-    this.id = num;
-    console.log(this.id);
-  }
+  
 
   delete() {
-    console.log(this.card[this.id].entryid);
+    console.log(this.card[this.storeIndex].entryid);
 
-    this.deletecardservice.deletecard(this.card[this.id].entryid).subscribe(
+    this.deletecardservice.deletecard(this.card[this.storeIndex].entryid).subscribe(
       (res: any) => {
+        console.log(res);
         this.router.routeReuseStrategy.shouldReuseRoute = () => false;
         this.router.onSameUrlNavigation = 'reload';
         this.router.navigate(['/today'], { relativeTo: this.route });
